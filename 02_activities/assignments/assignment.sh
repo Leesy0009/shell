@@ -30,20 +30,21 @@ unzip -q rawdata.zip
 # 1. Create a directory named data
 mkdir data
 # 2. Move the ./rawdata directory to ./data/raw (eg. move it into ./data and rename it to raw).
-move ./rawdata.zip ./data/raw
+mv ./rawdata ./data/raw
 # 3. List the contents of the ./data/raw directory
-tar -tfC:\Users\toffl\DSI\shell\02_activities\assignments\data\raw\rawdata.zip
+ls C:\Users\toffl\DSI\shell\02_activities\assignments\data\raw\raw> 
 # 4. Create the directory ./data/processed, 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
-touc
+mkdir -p ./data/processed/server_logs,user_logs,event_logs
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-
+cp server* ./data/processed/server_logs./data/inventory.txt
 # 6. Repeat the above step for user logs and event logs
-
+PS C:\Users\toffl\DSI\shell\02_activities\assignments\data\raw\raw> cp user* ./data/processed/user_logs
+PS C:\Users\toffl\DSI\shell\02_activities\assignments\data\raw\raw> cp event* ./data/processed/event_logs
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-
-# 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-
+rm ipaddr_* 
+# 8. Create a file named  that lists all the files in the subfolders of ./data/processed
+touch ./data/inventory.txt
 
 ###########################################
 
