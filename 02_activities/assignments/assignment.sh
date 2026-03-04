@@ -32,20 +32,18 @@ mkdir data
 # 2. Move the ./rawdata directory to ./data/raw (eg. move it into ./data and rename it to raw).
 mv ./rawdata ./data/raw
 # 3. List the contents of the ./data/raw directory
-ls C:\Users\toffl\DSI\shell\02_activities\assignments\data\raw\raw> 
+ls ./data/raw
 # 4. Create the directory ./data/processed, 
 #    then create the following sub-directories within it: server_logs, user_logs, and event_logs
-mkdir -p ./data/processed/server_logs,user_logs,event_logs
+mkdir server_logs, user_logs, event_logs
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-cp server* ./data/processed/server_logs./data/inventory.txt
+cp server* ../processed/server_logs/
 # 6. Repeat the above step for user logs and event logs
-PS C:\Users\toffl\DSI\shell\02_activities\assignments\data\raw\raw> cp user* ./data/processed/user_logs
-PS C:\Users\toffl\DSI\shell\02_activities\assignments\data\raw\raw> cp event* ./data/processed/event_logs
+cp event* ../processed/event_logs/  cp user* ../processed/user_logs/
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
 rm ipaddr_* 
 # 8. Create a file named  that lists all the files in the subfolders of ./data/processed
-touch ./data/inventory.txt
-
+ls -R ../processed > ../inventory.txt
 ###########################################
 
 echo "Project setup is complete!"
