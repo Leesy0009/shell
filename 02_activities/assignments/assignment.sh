@@ -33,8 +33,9 @@ mv ./rawdata ./data/raw
 # 3. List the contents of the ./data/raw directory
 ls ./data/raw
 # 4. Create the directory ./data/processed, then create the following sub-directories within it: server_logs, user_logs, and event_logs
-mkdir ./data/processed 
-mkdir server_logs, user_logs, event_logs
+mkdir data/processed/server_logs
+mkdir data/processed/user_logs
+mkdir data/processed/event_logs
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
 cp server* ../processed/server_logs/
 # 6. Repeat the above step for user logs and event logs
@@ -43,7 +44,7 @@ cp user* ../processed/user_logs/
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
 rm ipaddr_*
 rm user_ipaddr_*
-# 8. Create a file named  that lists all the files in the subfolders of ./data/processed
+# 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
 ls -R ../processed > ../inventory.txt
 ###########################################
 echo "Project setup is complete!"
